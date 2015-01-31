@@ -12,6 +12,6 @@ Cette valve a pour effet de forcer le regénération d'un nouveau JSESSIONID à 
 
   conf/server.xml - ajouter la déclaration de la valve ainsi :
 
-'''
+``` xml
 <Valve className="org.esupportail.tomcat.ChangeSessionIdValve" loginPath="/uPortal/Login"/>
-'''
+```
