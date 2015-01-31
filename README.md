@@ -3,12 +3,11 @@ L'ENT Esup/uPortal tel que livré et installé permet aux navigateurs-clients de
 Cette valve a pour effet de forcer le regénération d'un nouveau JSESSIONID à chaque authentification dans le portail .
 
 
-# Compilation :
+# Compilation et Installation :
 
   mvn clean package
-
-
-# Mise ne place dans le Tomcat :
+  
+  cp target/changeSessionIdValve-xxx.jar tomcat/lib/
 
   conf/server.xml - ajouter la déclaration de la valve ainsi :
 
