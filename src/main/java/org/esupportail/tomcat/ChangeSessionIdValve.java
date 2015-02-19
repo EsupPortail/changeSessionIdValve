@@ -18,11 +18,10 @@ public final class ChangeSessionIdValve extends ValveBase {
 
     public void invoke(Request request, Response response) throws
 	IOException, ServletException {
-	Session session = request.getSessionInternal(true);
 	String requestURI = request.getDecodedRequestURI();
 
-	if (session != null && loginPath != null &&
-	    requestURI.equals(loginPath)) {
+	if (loginPath != null && requestURI.equals(loginPath)) {
+	    Session session = request.getSessionInternal(true);
 	    Manager manager = request.getContext().getManager();
 	    manager.changeSessionId(session);
 	    request.changeSessionId(session.getId());
